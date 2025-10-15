@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+    <link rel="shortcut icon" href="https://cdn-p.smehost.net/sites/a6700d2fbaf642099802a57af8b10fe6/wp-content/uploads/2025/08/khlaid.png" type="image/png">
+     <style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .count {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 30px;
+        }
+
+        /* Anchor tag styled as button */
+        a.button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 15px 35px;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .count {
+                font-size: 2rem;
+            }
+            a.button {
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>this is the home page </h1>
+    <h1>THE COUNT IS <%= count %></h1>
+    <br><br>
+    &nbsp; &nbsp;
+<a href="/user" class="button">View Users</a>
+</body>
+</html>

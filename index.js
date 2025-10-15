@@ -11,6 +11,15 @@ const connection = mysql2.createConnection(
        password:"05012007"
     }
 );
+let createRandomUser = () => {
+    return [
+        faker.string.uuid(),
+         faker.internet.username(),
+         faker.internet.email(),
+
+         faker.internet.password()  ]
+};
+
 let query = "SHOW TABLES";
 try{
 connection.query(query,function(err , result){
@@ -35,15 +44,17 @@ catch(e){
 
 
 let new_query= "INSERT INTO USER(ID , USERNAME ,EMAIL, PASSWORD) VALUES ?";
-let new_para = ["1028@" , "J JIBLANI"  ,"jibdfalni2032@yahoo.com","23092654"];
-let new_para1=["1020@" , "k JIBLANI"  ,"jidfbadfslni2033@yahoo.com","2309234"];
-let new_para2 = ["102d@" , "jamala JIBLANI"  ,"jibasdfldfseni2035@yahoo.com","230923"];
+let data = [];
+for(let i =0;i<100;i++)
+{
+  data.push(createRandomUser());
+}
 
-let user = [ new_para, new_para1 , new_para2];
 try{
-connection.query(new_query , [user] , function(err ,result){
+connection.query(new_query , [data], function(err ,result){
 if(err) {console.log(err.message);}
 console.log(result);
+console.log(result.length)
 });
 }
 catch(e)
@@ -55,16 +66,6 @@ finally{
 
     connection.end();
 }
-let createRandomUser = () => {
-    return {
-        userId: faker.string.uuid(),
-        username: faker.internet.username(),
-        email: faker.internet.email(),
-        avatar: faker.image.avatar(),
-        password: faker.internet.password(),
-        birthdate: faker.date.birthdate(),
-        registeredAt: faker.date.past(),
-    };
-};
+
 
 
