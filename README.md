@@ -1,2 +1,2 @@
-# this is day on my earth
-this is the file that i will going to write the main things about 
+# THIS IS PROJECT THAT I MADE BY USING CRUD  , JS  , HTML, CSS  ,EJS , EXPESS, NODE ,MYSQL
+ 
