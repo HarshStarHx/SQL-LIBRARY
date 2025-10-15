@@ -4,33 +4,57 @@ const { faker } = require('@faker-js/faker');
 const mysql2 = require('mysql2');
 
 const connection = mysql2.createConnection(
-{
-   host:'localhost',
-   user:'root',
-   database:'STARUX_DATA',
-   password:"05012007"
-});
-try{
-connection.query('SHOW TABLES', function(err, results) {
-    if (err) 
     {
-        throw err
-    } 
-    else{
-        console.log(results);
+       host:"localhost",
+       database:"STARUX_DATA",
+       user:"root",
+       password:"05012007"
     }
-    console.log("the try and catch task is completed");
+);
+let query = "SHOW TABLES";
+try{
+connection.query(query,function(err , result){
+    if(err)
+    {
+        console.log("there is an error which is happening inside of the window ");
+    }else{
+    let value =  result;
+    console.log(value);
+    console.log(value.length);
+    console.log(value[0]);
+    console.log(value[1]);
+    
+    }
 });
 }
 catch(e){
-    console.log("the program is not executing " , e);
+    console.log("this is the error that i am getting ");
+    
+    
+}
 
+
+let new_query= "INSERT INTO USER(ID , USERNAME ,EMAIL, PASSWORD) VALUES ?";
+let new_para = ["1028@" , "J JIBLANI"  ,"jibdfalni2032@yahoo.com","23092654"];
+let new_para1=["1020@" , "k JIBLANI"  ,"jidfbadfslni2033@yahoo.com","2309234"];
+let new_para2 = ["102d@" , "jamala JIBLANI"  ,"jibasdfldfseni2035@yahoo.com","230923"];
+
+let user = [ new_para, new_para1 , new_para2];
+try{
+connection.query(new_query , [user] , function(err ,result){
+if(err) {console.log(err.message);}
+console.log(result);
+});
+}
+catch(e)
+{
+    console.log("this is the error that i have found " , e);
+ 
 }
 finally{
-    console.log("finally the program is finshish");
+
     connection.end();
 }
-
 let createRandomUser = () => {
     return {
         userId: faker.string.uuid(),

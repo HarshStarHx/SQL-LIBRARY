@@ -1,0 +1,10 @@
+-- SHOW TABLES;
+-- SELECT * FROM STARUX_TABLE;
+
+-- CREATE TABLE user(
+-- ID VARCHAR(50) PRIMARY KEY,
+-- username varchar(59) UNIQUE,
+-- Email VARCHAR(100) UNIQUE NOT NULL,
+-- PASSWORD VARCHAR(50) NOT NULL
+-- );
+select * from user;
